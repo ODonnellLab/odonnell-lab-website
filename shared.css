@@ -355,6 +355,36 @@ a { color: var(--accent); }
 }
 .research-panel-body p { font-size: 14px; line-height: 1.8; }
 .research-panel-body p:last-child { margin-bottom: 0; }
+
+.panel-pubs {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.6rem;
+}
+.panel-pubs-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  flex-basis: 100%;
+  margin-bottom: 0.1rem;
+}
+.panel-pubs a {
+  font-size: 12px;
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.panel-pubs a:hover { text-decoration: underline; }
+.panel-pubs-nolink {
+  font-size: 12px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
 .research-key-papers { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border2); }
 .research-key-papers p { font-size: 12px; font-family: var(--mono); color: var(--text-dim); margin: 0; }
 .research-key-papers a { color: var(--accent); font-size: 12px; }
