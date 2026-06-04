@@ -126,7 +126,7 @@ async function renderLabLife() {
   if (!visible.length) return;
 
   const types = [...new Set(visible.map(p => p.type))];
-  const typeLabels = { 'lab-life': 'Lab Life', 'research': 'Research', 'conferences': 'Conferences' };
+  const typeLabels = { 'lab-life': 'Lab Life', 'labwork': 'Lab Work', 'conferences': 'Conferences' };
 
   function renderGrid(filter) {
     const subset = filter === 'all' ? visible : visible.filter(p => p.type === filter);

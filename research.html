@@ -59,10 +59,7 @@
         metabolites, from both microbial and host sources, that move through this intertissue route
         to influence sensory decisions and behavior.
       </p>
-      <div class="panel-media">
-        <img class="panel-media-item" src="/images/research/Fluorescent%20bacteria.png" alt="Fluorescent bacteria in C. elegans gut">
-        <img class="panel-media-item" src="/images/research/GreenWorms.jpg" alt="Fluorescent C. elegans">
-      </div>
+      <div class="panel-media" data-panel="panel1"></div>
       <div class="panel-pubs">
         <div class="panel-pubs-label">Related publications</div>
         <a href="https://doi.org/10.1101/2025.10.20.683577" target="_blank" rel="noopener">Malaiwong P. et al., <em>bioRxiv</em> 2025</a>
@@ -95,9 +92,7 @@
         raising the possibility that these pathways originally evolved as cross-species chemical
         communication before being co-opted by neurons.
       </p>
-      <div class="panel-media">
-        <img class="panel-media-item" src="/images/research/gcamp_plate_HC.gif" alt="High-content GCaMP imaging in C. elegans">
-      </div>
+      <div class="panel-media" data-panel="panel2"></div>
       <div class="panel-pubs">
         <div class="panel-pubs-label">Related publications</div>
         <a href="https://doi.org/10.64898/2026.01.12.699147v1" target="_blank" rel="noopener">Malaiwong N. et al., <em>G3</em> 2026</a>
@@ -133,12 +128,7 @@
         feeders — to ask whether these predator–prey dynamics are conserved across distantly related
         eukaryotes.
       </p>
-      <div class="panel-media">
-        <img class="panel-media-item" src="/images/research/Feeding_gcamp.gif" alt="GCaMP neural activity during feeding">
-        <video class="panel-media-item" autoplay loop muted playsinline>
-          <source src="/images/research/ShortWormEatingBacteria.mp4" type="video/mp4">
-        </video>
-      </div>
+      <div class="panel-media" data-panel="panel3"></div>
       <div class="panel-pubs">
         <div class="panel-pubs-label">Related publications</div>
         <a href="https://doi.org/10.1038/s41586-020-2395-5" target="_blank" rel="noopener">O'Donnell et al., <em>Nature</em> 2020</a>
@@ -149,5 +139,30 @@
 </div>
 
 <script src="/site.js"></script>
+<script>
+const VIDEO_EXTS = new Set(['mp4', 'webm', 'mov']);
+function mediaEl(file) {
+  const ext = file.split('.').pop().toLowerCase();
+  const src = `/images/research/${file}`;
+  if (VIDEO_EXTS.has(ext)) {
+    const v = document.createElement('video');
+    v.className = 'panel-media-item';
+    v.autoplay = true; v.loop = true; v.muted = true; v.playsInline = true;
+    v.innerHTML = `<source src="${src}" type="video/${ext === 'mov' ? 'mp4' : ext}">`;
+    return v;
+  }
+  const img = document.createElement('img');
+  img.className = 'panel-media-item';
+  img.src = src; img.alt = file.replace(/[-_]/g, ' ').replace(/\.[^.]+$/, '');
+  return img;
+}
+
+loadData('/data/research-media.json').then(media => {
+  document.querySelectorAll('.panel-media[data-panel]').forEach(div => {
+    const files = media[div.dataset.panel] || [];
+    files.forEach(f => div.appendChild(mediaEl(`${div.dataset.panel}/${f}`)));
+  });
+});
+</script>
 </body>
 </html>
