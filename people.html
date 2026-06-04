@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>People — ODonnell Lab</title>
+<link rel="stylesheet" href="/shared.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="site-logo">⬡ ODONNELL LAB</a>
+  <nav class="site-nav">
+    <a href="/index.html">Home</a>
+    <a href="/research.html">Research</a>
+    <a href="/people.html">People</a>
+    <a href="/publications.html">Publications</a>
+    <a href="/news.html">News</a>
+    <a href="/join.html">Join Us</a>
+    <a href="https://odonnelllab.netlify.app" class="nav-wiki-link" target="_blank" rel="noopener">Lab Wiki ↗</a>
+  </nav>
+</header>
+
+<div id="pi-section">
+  <div class="loading-placeholder" style="padding:3rem;">Loading…</div>
+</div>
+
+<div id="people-section" class="people-section"></div>
+
+<script src="/site.js"></script>
+<script>
+const ROLE_ORDER = ['Principal Investigator', 'Postdoctoral Researcher', 'Graduate Student', 'Undergraduate Researcher', 'Alumni'];
+
+function linkIcon(type) {
+  const labels = { email: 'Email', twitter: 'Twitter', scholar: 'Scholar', orcid: 'ORCID' };
+  return labels[type] || type;
+}
+
+function renderLinks(links) {
+  if (!links) return '';
+  return Object.entries(links)
+    .filter(([, v]) => v)
+    .map(([type, url]) => {
+      const href = type === 'email' ? `mailto:${url}` : url;
+      return `<a href="${href}" target="_blank" rel="noopener">${linkIcon(type)}</a>`;
+    }).join('');
+}
+
+async function renderPeople() {
+  const piSection = document.getElementById('pi-section');
+  const peopleSection = document.getElementById('people-section');
+
+  let people;
+  try {
+    people = await loadData('/data/people.json');
+  } catch (e) {
+    renderError(piSection, 'Could not load people data.');
+    return;
+  }
+
+  people.sort((a, b) => a.order - b.order);
+
+  const pi = people.find(p => p.order === 0);
+  const rest = people.filter(p => p.order > 0);
+
+  // PI spotlight
+  if (pi) {
+    const links = renderLinks(pi.links);
+    piSection.innerHTML = `
+      <div class="pi-spotlight">
+        <img class="pi-photo" src="${pi.photo}" alt="${pi.name}" onerror="this.src='/images/people/placeholder.jpg'">
+        <div class="pi-info">
+          <div class="page-eyebrow">Lab Director</div>
+          <h1>${pi.name}</h1>
+          <div class="pi-role">${pi.role} · Yale MCD Biology</div>
+          <p style="max-width:640px;">${pi.bio}</p>
+          ${links ? `<div class="pi-links">${links}</div>` : ''}
+        </div>
+      </div>`;
+  } else {
+    piSection.innerHTML = '';
+  }
+
+  if (!rest.length) { peopleSection.innerHTML = ''; return; }
+
+  // Group by role
+  const groups = new Map();
+  for (const p of rest) {
+    const role = p.role || 'Lab Member';
+    if (!groups.has(role)) groups.set(role, []);
+    groups.get(role).push(p);
+  }
+
+  // Sort groups by ROLE_ORDER
+  const sortedGroups = [...groups.entries()].sort(([a], [b]) => {
+    const ai = ROLE_ORDER.indexOf(a), bi = ROLE_ORDER.indexOf(b);
+    return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+  });
+
+  peopleSection.innerHTML = sortedGroups.map(([role, members]) => `
+    <div class="people-group-label">${role}</div>
+    <div class="people-grid">
+      ${members.map(p => `
+        <div class="person-card">
+          <img class="person-photo" src="${p.photo}" alt="${p.name}" onerror="this.src='/images/people/placeholder.jpg'">
+          <div class="person-info">
+            <div class="person-name">${p.name}</div>
+            <div class="person-role">${p.role}</div>
+            ${p.links ? `<div class="person-links">${renderLinks(p.links)}</div>` : ''}
+          </div>
+        </div>`).join('')}
+    </div>`).join('');
+}
+
+renderPeople();
+</script>
+</body>
+</html>

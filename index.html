@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ODonnell Lab — Yale University</title>
+<meta name="description" content="The ODonnell Lab studies how gut microbes shape animal behavior and physiology using C. elegans. Yale MCD Biology.">
+<link rel="stylesheet" href="/shared.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="site-logo">⬡ ODONNELL LAB</a>
+  <nav class="site-nav">
+    <a href="/index.html">Home</a>
+    <a href="/research.html">Research</a>
+    <a href="/people.html">People</a>
+    <a href="/publications.html">Publications</a>
+    <a href="/news.html">News</a>
+    <a href="/join.html">Join Us</a>
+    <a href="https://odonnelllab.netlify.app" class="nav-wiki-link" target="_blank" rel="noopener">Lab Wiki ↗</a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<div class="hero-full">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Yale University · MCD Biology</div>
+    <h1>How microbes shape animal minds</h1>
+    <p class="hero-tagline">
+      We study the multitude of ways that gut bacteria influence the behavior and physiology
+      of their animal hosts, using <em>C. elegans</em> as a model.
+    </p>
+    <div class="hero-actions">
+      <a href="/research.html" class="btn">Our Research</a>
+      <a href="/publications.html" class="btn btn-outline">Publications</a>
+    </div>
+  </div>
+  <div class="hero-image-panel">
+    <img src="/images/hero/hero.png" alt="Fluorescent neurons in C. elegans">
+  </div>
+</div>
+
+<!-- Teasers -->
+<div class="home-teasers">
+  <!-- News teaser -->
+  <div class="teaser-card" style="--card-accent: var(--accent4);">
+    <div class="teaser-label">Latest News</div>
+    <div id="news-teaser"><div class="loading-placeholder">Loading…</div></div>
+    <a href="/news.html" class="teaser-more">All news →</a>
+  </div>
+
+  <!-- Publications teaser -->
+  <div class="teaser-card" style="--card-accent: var(--accent);">
+    <div class="teaser-label">Featured Publications</div>
+    <div id="pubs-teaser"><div class="loading-placeholder">Loading…</div></div>
+    <a href="/publications.html" class="teaser-more">All publications →</a>
+  </div>
+
+  <!-- Research areas -->
+  <div class="teaser-card" style="--card-accent: var(--accent2);">
+    <div class="teaser-label">Research Areas</div>
+    <ul class="teaser-research-list">
+      <li>Gut microbiome–behavior interactions</li>
+      <li>Sensory neuroscience &amp; neural circuits</li>
+      <li>Chemical ecology of host–microbe interactions</li>
+      <li>Host physiological response to colonization</li>
+    </ul>
+    <a href="/research.html" class="teaser-more">Learn more →</a>
+  </div>
+</div>
+
+<!-- Dept bar -->
+<div class="dept-bar">
+  <span>
+    Department of Molecular, Cellular and Developmental Biology ·
+    <a href="https://mcdb.yale.edu" target="_blank" rel="noopener">Yale University</a> ·
+    New Haven, CT
+  </span>
+  <a href="https://odonnelllab.netlify.app" target="_blank" rel="noopener">Lab Wiki &amp; Tools ↗</a>
+</div>
+
+<script src="/site.js"></script>
+<script>
+function formatDate(isoDate) {
+  const d = new Date(isoDate + 'T00:00:00');
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+}
+
+async function loadNewsTeaser() {
+  const el = document.getElementById('news-teaser');
+  let items;
+  try { items = await loadData('/data/news.json'); }
+  catch { el.innerHTML = '<p style="font-size:13px;color:var(--text-dim)">Unable to load.</p>'; return; }
+
+  items.sort((a, b) => {
+    if (a.pinned && !b.pinned) return -1;
+    if (!a.pinned && b.pinned) return 1;
+    return b.date.localeCompare(a.date);
+  });
+
+  el.innerHTML = items.slice(0, 3).map(item => `
+    <div class="teaser-item">
+      <div class="teaser-item-date">${formatDate(item.date)}</div>
+      <a href="/news.html">${item.title}</a>
+    </div>`).join('');
+}
+
+async function loadPubsTeaser() {
+  const el = document.getElementById('pubs-teaser');
+  let text;
+  try {
+    const resp = await fetch('/data/publications.bib');
+    if (!resp.ok) throw new Error(resp.status);
+    text = await resp.text();
+  } catch {
+    el.innerHTML = '<p style="font-size:13px;color:var(--text-dim)">Unable to load.</p>';
+    return;
+  }
+
+  const pubs = parseBibtex(text).filter(p => p.title);
+  let featured = pubs.filter(p => p.highlight);
+  if (!featured.length) featured = pubs.slice(0, 3);
+  featured = featured.slice(0, 3);
+
+  el.innerHTML = featured.map(pub => `
+    <div class="teaser-item">
+      <div class="teaser-item-date">${pub.journal ? pub.journal.split(' ')[0] + ' ' + pub.year : pub.year}</div>
+      <a href="/publications.html">${pub.title}</a>
+    </div>`).join('');
+}
+
+loadNewsTeaser();
+loadPubsTeaser();
+</script>
+</body>
+</html>

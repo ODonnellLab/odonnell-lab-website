@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications — ODonnell Lab</title>
+<link rel="stylesheet" href="/shared.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="site-logo">⬡ ODONNELL LAB</a>
+  <nav class="site-nav">
+    <a href="/index.html">Home</a>
+    <a href="/research.html">Research</a>
+    <a href="/people.html">People</a>
+    <a href="/publications.html">Publications</a>
+    <a href="/news.html">News</a>
+    <a href="/join.html">Join Us</a>
+    <a href="https://odonnelllab.netlify.app" class="nav-wiki-link" target="_blank" rel="noopener">Lab Wiki ↗</a>
+  </nav>
+</header>
+
+<div class="pub-layout">
+  <!-- Sidebar filters -->
+  <aside class="pub-sidebar">
+    <div class="pub-sidebar-label">Search</div>
+    <input type="text" class="filter-input" id="pub-search" placeholder="Title, author, journal…" autocomplete="off">
+
+    <div class="pub-sidebar-label" style="margin-top:1.5rem;">Filter by Year</div>
+    <div class="pub-year-filter" id="year-filters">
+      <div class="loading-placeholder">Loading…</div>
+    </div>
+
+    <div class="pub-sidebar-label" style="margin-top:1.5rem;">Show</div>
+    <label class="pub-highlight-toggle">
+      <input type="checkbox" id="highlight-only"> Featured only
+    </label>
+
+    <div class="pub-count" id="pub-count"></div>
+  </aside>
+
+  <!-- Publication list -->
+  <main class="pub-main">
+    <div class="page-eyebrow">ODonnell Lab</div>
+    <h1 style="font-size:2rem; margin-bottom:0.25rem;">Publications</h1>
+    <p style="margin-bottom:2.5rem;">
+      To update this list, export BibTeX from your reference manager and edit
+      <code style="font-family:var(--mono); font-size:12px; color:var(--accent4);">data/publications.bib</code>.
+    </p>
+    <div id="pub-list">
+      <div class="loading-placeholder">Loading publications…</div>
+    </div>
+  </main>
+</div>
+
+<script src="/site.js"></script>
+<script>
+let allPubs = [];
+
+function journalLine(pub) {
+  const parts = [pub.journal];
+  if (pub.volume) parts.push(`${pub.volume}`);
+  if (pub.pages)  parts.push(pub.pages);
+  if (pub.year)   parts.push(`(${pub.year})`);
+  return parts.filter(Boolean).join(', ');
+}
+
+function pubLinks(pub) {
+  const links = [];
+  if (pub.doi)  links.push(`<a href="https://doi.org/${pub.doi}" class="badge badge-blue" target="_blank" rel="noopener">DOI</a>`);
+  if (pub.pmid) links.push(`<a href="https://pubmed.ncbi.nlm.nih.gov/${pub.pmid}" class="badge badge-green" target="_blank" rel="noopener">PubMed</a>`);
+  if (!pub.doi && !pub.pmid && pub.url) links.push(`<a href="${pub.url}" class="badge badge-blue" target="_blank" rel="noopener">Link</a>`);
+  return links.join('');
+}
+
+function renderList(pubs) {
+  const container = document.getElementById('pub-list');
+  const count = document.getElementById('pub-count');
+
+  if (!pubs.length) {
+    container.innerHTML = '<p style="color:var(--text-dim);">No publications match your filters.</p>';
+    count.textContent = '0 papers';
+    return;
+  }
+
+  count.textContent = `${pubs.length} paper${pubs.length === 1 ? '' : 's'}`;
+
+  // Group by year descending
+  const byYear = new Map();
+  for (const p of pubs) {
+    const yr = p.year || 'Preprint';
+    if (!byYear.has(yr)) byYear.set(yr, []);
+    byYear.get(yr).push(p);
+  }
+
+  const years = [...byYear.keys()].sort((a, b) => (b === 'Preprint' ? -1 : a === 'Preprint' ? 1 : b - a));
+
+  container.innerHTML = years.map(yr => `
+    <div class="pub-year-group">
+      <div class="pub-year-heading">${yr}</div>
+      ${byYear.get(yr).map(pub => `
+        <div class="pub-entry">
+          <div class="pub-meta">
+            <div class="pub-title">
+              ${pub.highlight ? '<span class="badge badge-orange" style="margin-right:0.4rem; vertical-align:middle;">Featured</span>' : ''}
+              ${pub.title}
+            </div>
+            <div class="pub-authors">${formatAuthors(pub.author, "O'Donnell")}</div>
+            <div class="pub-journal">${journalLine(pub)}</div>
+          </div>
+          <div class="pub-links-col">${pubLinks(pub)}</div>
+        </div>`).join('')}
+    </div>`).join('');
+}
+
+function applyFilters() {
+  const query = document.getElementById('pub-search').value.toLowerCase();
+  const highlightOnly = document.getElementById('highlight-only').checked;
+  const checkedYears = [...document.querySelectorAll('#year-filters input:checked')].map(el => parseInt(el.value));
+
+  let filtered = allPubs;
+
+  if (highlightOnly) filtered = filtered.filter(p => p.highlight);
+
+  if (checkedYears.length) filtered = filtered.filter(p => checkedYears.includes(p.year));
+
+  if (query) {
+    filtered = filtered.filter(p =>
+      p.title.toLowerCase().includes(query) ||
+      p.author.toLowerCase().includes(query) ||
+      p.journal.toLowerCase().includes(query)
+    );
+  }
+
+  renderList(filtered);
+}
+
+async function init() {
+  const container = document.getElementById('pub-list');
+  const yearFilters = document.getElementById('year-filters');
+
+  let text;
+  try {
+    const resp = await fetch('/data/publications.bib');
+    if (!resp.ok) throw new Error(resp.status);
+    text = await resp.text();
+  } catch (e) {
+    renderError(container, 'Could not load publications. Please try again later.');
+    yearFilters.innerHTML = '';
+    return;
+  }
+
+  allPubs = parseBibtex(text).filter(p => p.title);
+  // Sort newest first
+  allPubs.sort((a, b) => b.year - a.year);
+
+  // Build year checkboxes
+  const years = [...new Set(allPubs.map(p => p.year).filter(Boolean))].sort((a, b) => b - a);
+  yearFilters.innerHTML = years.map(yr => `
+    <label>
+      <input type="checkbox" value="${yr}"> ${yr}
+    </label>`).join('');
+
+  document.getElementById('pub-search').addEventListener('input', applyFilters);
+  document.getElementById('highlight-only').addEventListener('change', applyFilters);
+  yearFilters.addEventListener('change', applyFilters);
+
+  renderList(allPubs);
+}
+
+init();
+</script>
+</body>
+</html>

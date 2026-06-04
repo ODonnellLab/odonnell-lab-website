@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News — ODonnell Lab</title>
+<link rel="stylesheet" href="/shared.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="site-logo">⬡ ODONNELL LAB</a>
+  <nav class="site-nav">
+    <a href="/index.html">Home</a>
+    <a href="/research.html">Research</a>
+    <a href="/people.html">People</a>
+    <a href="/publications.html">Publications</a>
+    <a href="/news.html">News</a>
+    <a href="/join.html">Join Us</a>
+    <a href="https://odonnelllab.netlify.app" class="nav-wiki-link" target="_blank" rel="noopener">Lab Wiki ↗</a>
+  </nav>
+</header>
+
+<div class="news-page">
+  <div class="page-eyebrow">Lab Updates</div>
+  <h1>News</h1>
+  <p>Announcements, publications, lab events, and highlights.</p>
+
+  <div id="news-list" class="news-list">
+    <div class="loading-placeholder">Loading news…</div>
+  </div>
+</div>
+
+<script src="/site.js"></script>
+<script>
+function formatDate(isoDate) {
+  const d = new Date(isoDate + 'T00:00:00');
+  return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long' });
+}
+
+async function renderNews() {
+  const container = document.getElementById('news-list');
+  let items;
+  try {
+    items = await loadData('/data/news.json');
+  } catch (e) {
+    renderError(container, 'Could not load news. Please try again later.');
+    return;
+  }
+
+  // Pinned items first, then sort by date descending
+  items.sort((a, b) => {
+    if (a.pinned && !b.pinned) return -1;
+    if (!a.pinned && b.pinned) return 1;
+    return b.date.localeCompare(a.date);
+  });
+
+  if (!items.length) {
+    container.innerHTML = '<p>No news yet — check back soon.</p>';
+    return;
+  }
+
+  container.innerHTML = items.map(item => `
+    <div class="news-item">
+      <div class="news-date">${formatDate(item.date)}</div>
+      <div class="news-body">
+        <div class="news-title">
+          ${item.pinned ? '<span class="badge badge-orange" style="margin-right:0.5rem;">Pinned</span>' : ''}
+          ${item.title}
+        </div>
+        <p>${item.body}</p>
+        ${item.link ? `<a href="${item.link}" target="_blank" rel="noopener">Read more →</a>` : ''}
+      </div>
+    </div>
+  `).join('');
+}
+
+renderNews();
+</script>
+</body>
+</html>
