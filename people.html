@@ -29,7 +29,7 @@
 
 <script src="/site.js"></script>
 <script>
-const ROLE_ORDER = ['Principal Investigator', 'Postdoctoral Researcher', 'Graduate Student', 'Undergraduate Researcher', 'Alumni'];
+const ROLE_ORDER = ['Principal Investigator', 'Postdoctoral Fellow', 'Graduate Student', 'Postgraduate Researcher', 'Undergraduate Researcher', 'Alumni'];
 
 function linkIcon(type) {
   const labels = { email: 'Email', twitter: 'Twitter', scholar: 'Scholar', orcid: 'ORCID' };
@@ -105,14 +105,64 @@ async function renderPeople() {
           <img class="person-photo" src="${p.photo}" alt="${p.name}" onerror="this.src='/images/people/placeholder.jpg'">
           <div class="person-info">
             <div class="person-name">${p.name}</div>
-            <div class="person-role">${p.role}</div>
-            ${p.links ? `<div class="person-links">${renderLinks(p.links)}</div>` : ''}
+            <div class="person-role">${p.role === 'Alumni' ? p.former_role || 'Lab Member' : p.role}</div>
+            ${p.years ? `<div class="person-years">${p.years}</div>` : ''}
+            ${p.current_role ? `<div class="person-current-role">→ ${p.current_role}</div>` : ''}
+            ${p.links && Object.values(p.links).some(v => v) ? `<div class="person-links">${renderLinks(p.links)}</div>` : ''}
           </div>
         </div>`).join('')}
     </div>`).join('');
 }
 
 renderPeople();
+
+async function renderLabLife() {
+  let photos;
+  try {
+    photos = await loadData('/data/photos.json');
+  } catch (e) { return; }
+
+  const visible = photos.filter(p => p.type && p.file);
+  if (!visible.length) return;
+
+  const types = [...new Set(visible.map(p => p.type))];
+  const typeLabels = { 'lab-life': 'Lab Life', 'research': 'Research', 'conferences': 'Conferences' };
+
+  function renderGrid(filter) {
+    const subset = filter === 'all' ? visible : visible.filter(p => p.type === filter);
+    return subset.map(p => `
+      <div class="lab-life-photo">
+        <img src="/images/photos/${p.file}" alt="${p.caption || ''}" loading="lazy">
+        ${p.caption ? `<div class="lab-life-caption">${p.caption}</div>` : ''}
+      </div>`).join('');
+  }
+
+  const showTabs = types.length > 1;
+  const section = document.createElement('div');
+  section.className = 'lab-life-section';
+  section.innerHTML = `
+    <div class="lab-life-header">
+      <div class="page-eyebrow">Photos</div>
+      ${showTabs ? `<div class="lab-life-tabs">
+        <button class="lab-life-tab active" data-filter="all">All</button>
+        ${types.map(t => `<button class="lab-life-tab" data-filter="${t}">${typeLabels[t] || t}</button>`).join('')}
+      </div>` : ''}
+    </div>
+    <div class="lab-life-grid">${renderGrid('all')}</div>`;
+  document.body.insertBefore(section, document.querySelector('script[src]'));
+
+  if (showTabs) {
+    section.querySelectorAll('.lab-life-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        section.querySelectorAll('.lab-life-tab').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        section.querySelector('.lab-life-grid').innerHTML = renderGrid(btn.dataset.filter);
+      });
+    });
+  }
+}
+
+renderLabLife();
 </script>
 </body>
 </html>

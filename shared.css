@@ -313,7 +313,8 @@ a { color: var(--accent); }
 /* ── RESEARCH PANELS ─────────────────────────────────────── */
 .research-page { max-width: 1100px; margin: 0 auto; padding: 3rem; }
 .research-intro { max-width: 680px; margin-bottom: 4rem; }
-.research-intro h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+.research-intro h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.research-lab-subtitle { font-size: 13px; color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem; letter-spacing: 0.02em; }
 
 .research-panel {
   display: flex;
@@ -437,7 +438,9 @@ a { color: var(--accent); }
 }
 .person-info { padding: 1rem; }
 .person-name { font-weight: 600; font-size: 14px; color: var(--text); margin-bottom: 0.25rem; }
-.person-role { font-size: 12px; color: var(--text-muted); margin-bottom: 0.6rem; }
+.person-role { font-size: 12px; color: var(--text-muted); margin-bottom: 0.25rem; }
+.person-years { font-size: 11px; color: var(--text-muted); opacity: 0.7; margin-bottom: 0.25rem; }
+.person-current-role { font-size: 11px; color: var(--accent); font-style: italic; margin-bottom: 0.5rem; }
 .person-links { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 .person-links a {
   font-family: var(--mono);
@@ -449,6 +452,34 @@ a { color: var(--accent); }
   border-radius: 3px;
 }
 .person-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ── LAB LIFE GALLERY ────────────────────────────────────── */
+.lab-life-section { max-width: 1100px; margin: 0 auto; padding: 3rem; border-top: 1px solid var(--border); }
+.lab-life-header { margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+.lab-life-tabs { display: flex; gap: 0.4rem; }
+.lab-life-tab {
+  background: none; border: 1px solid var(--border); border-radius: 4px;
+  color: var(--text-muted); font-size: 11px; font-family: inherit;
+  padding: 0.25rem 0.75rem; cursor: pointer; transition: all 0.15s;
+}
+.lab-life-tab:hover { border-color: var(--accent); color: var(--accent); }
+.lab-life-tab.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.lab-life-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.lab-life-photo { position: relative; border-radius: 8px; overflow: hidden; background: var(--surface); }
+.lab-life-photo img { width: 100%; height: 220px; object-fit: cover; display: block; transition: transform 0.3s ease; }
+.lab-life-photo:hover img { transform: scale(1.03); }
+.lab-life-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 11px;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(0,0,0,0.65));
+}
 
 /* ── PUBLICATIONS ────────────────────────────────────────── */
 .pub-layout {

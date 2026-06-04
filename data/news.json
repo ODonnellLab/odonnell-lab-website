@@ -1,15 +1,50 @@
 [
   {
-    "date": "2024-04-01",
-    "title": "Lab members present at C. elegans conference",
-    "body": "Congratulations to lab members who presented their work at the International C. elegans Conference. Great discussions and science all around.",
+    "date": "2026-02-01",
+    "title": "Caroline Utermann awarded Gates Cambridge Fellowship",
+    "body": "Congratulations to Caroline Utermann, whose senior thesis work in the lab has been recognized with a Gates Cambridge Fellowship. Caroline will pursue her PhD at Cambridge. A remarkable achievement!",
+    "link": null,
+    "pinned": true
+  },
+  {
+    "date": "2026-01-15",
+    "title": "Flint 2.0 published in G3",
+    "body": "Our paper describing Flint 2.0 — a robust and customizable single-shot genome integration method for C. elegans — has been accepted and is now in press at G3. Congratulations to Nawaphat Malaiwong, Porhathai Malaiwong, and Chloe Kim!",
+    "link": "https://doi.org/10.64898/2026.01.12.699147v1",
+    "pinned": false
+  },
+  {
+    "date": "2025-11-15",
+    "title": "Nawaphat Malaiwong gives selected talk at International C. elegans Conference",
+    "body": "Nawaphat was selected to give a platform presentation at the 2025 International C. elegans Conference at UC Davis, presenting work on emerging genetic tools for C. elegans. Congratulations!",
     "link": null,
     "pinned": false
   },
   {
+    "date": "2025-11-01",
+    "title": "Patricia Joseph wins ABRCMS award for top poster presentation",
+    "body": "Congratulations to Patricia Joseph, whose poster was recognized with an award for top presentation at the Annual Biomedical Research Conference for Minoritized Scientists (ABRCMS) 2025.",
+    "link": null,
+    "pinned": false
+  },
+  {
+    "date": "2025-10-20",
+    "title": "New preprint: nuclear receptor–neurotransmitter coupling links behavior to metabolic state",
+    "body": "Our latest work, led by Porhathai Malaiwong and Allen Schroeder, is now posted on bioRxiv and currently in revision at Nature. We describe how octopamine glucosylation in the intestine encodes dietary history and drives chemosensory behavior changes through an intertissue signaling pathway.",
+    "link": "https://doi.org/10.1101/2025.10.20.683577",
+    "pinned": true
+  },
+  {
     "date": "2023-09-01",
-    "title": "Welcome new lab members!",
-    "body": "We are excited to welcome several new members to the lab this fall. We look forward to the great science ahead.",
+    "title": "Lab awarded NIH Director's New Innovator Award",
+    "body": "The O'Donnell lab has received an NIH Director's New Innovator Award (DP2) from NIGMS, supporting our work on molecular determinants of host-feeding manipulation and microbial colonization. We are grateful for this support!",
+    "link": null,
+    "pinned": false
+  },
+  {
+    "date": "2023-06-01",
+    "title": "Julia Balch wins Boell thesis prize for top senior thesis",
+    "body": "Congratulations to Julia Balch, who won the Boell thesis prize for the top senior thesis in MCDB. Julia presented her thesis work at the Gordon Research Conference on Animal-Microbe Symbiosis in Lucca, Italy. She will go on to the Princeton MolBio PhD program.",
     "link": null,
     "pinned": false
   }

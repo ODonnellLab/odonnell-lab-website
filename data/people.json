@@ -4,25 +4,146 @@
     "role": "Principal Investigator",
     "order": 0,
     "photo": "/images/people/odonnell.jpg",
-    "bio": "Assistant Professor in the Department of Molecular, Cellular and Developmental Biology at Yale University. The O'Donnell lab studies the multitude of ways that microbes influence the behavior and physiology of their animal hosts, using C. elegans and its natural gut microbiome as a model.",
+    "bio": "Assistant Professor in the Department of Molecular, Cellular and Developmental Biology at Yale University. The O'Donnell lab studies how microorganisms communicate chemically with their animal hosts — and with each other — using <em>C. elegans</em> as a model to dissect the molecular and neural mechanisms of host-microbe interaction.",
     "links": {
       "email": "m.odonnell@yale.edu",
-      "twitter": null,
-      "scholar": null,
+      "scholar": "https://scholar.google.com/citations?user=michael.o%27donnell.2",
       "orcid": null
     }
   },
   {
-    "name": "Graduate Student Name",
+    "name": "Nawaphat Malaiwong",
+    "role": "Postdoctoral Fellow",
+    "order": 10,
+    "photo": "/images/people/nawaphat.jpg",
+    "links": {}
+  },
+  {
+    "name": "Sebastian Gonzalez La Corte",
+    "role": "Postdoctoral Fellow",
+    "order": 11,
+    "photo": "/images/people/placeholder.jpg",
+    "links": {}
+  },
+  {
+    "name": "Patty Benitez-Lomi",
     "role": "Graduate Student",
     "order": 20,
     "photo": "/images/people/placeholder.jpg",
-    "bio": "Brief description of research focus.",
-    "links": {
-      "email": null,
-      "twitter": null,
-      "scholar": null,
-      "orcid": null
-    }
+    "links": {}
+  },
+  {
+    "name": "Porhathai Malaiwong",
+    "role": "Postgraduate Researcher",
+    "order": 25,
+    "photo": "/images/people/porhathai.jpg",
+    "links": {}
+  },
+  {
+    "name": "Sarah Mahmoud",
+    "role": "Undergraduate Researcher",
+    "order": 30,
+    "photo": "/images/people/placeholder.jpg",
+    "links": {}
+  },
+  {
+    "name": "Caroline Utermann",
+    "role": "Undergraduate Researcher",
+    "order": 31,
+    "photo": "/images/people/placeholder.jpg",
+    "links": {}
+  },
+  {
+    "name": "Patricia Joseph",
+    "role": "Undergraduate Researcher",
+    "order": 32,
+    "photo": "/images/people/placeholder.jpg",
+    "links": {}
+  },
+  {
+    "name": "Madhumanti Dasgupta",
+    "role": "Alumni",
+    "order": 90,
+    "photo": "/images/people/dasgupta.jpg",
+    "years": "2021–2025",
+    "former_role": "Postdoctoral Fellow",
+    "links": {}
+  },
+  {
+    "name": "Tia Brown",
+    "role": "Alumni",
+    "order": 91,
+    "photo": "/images/people/placeholder.jpg",
+    "years": "2021–2024",
+    "former_role": "Postgraduate Researcher",
+    "links": {}
+  },
+  {
+    "name": "Julia Balch",
+    "role": "Alumni",
+    "order": 92,
+    "photo": "/images/people/placeholder.jpg",
+    "years": "2021–2023",
+    "former_role": "Undergraduate Researcher",
+    "current_role": "Princeton MolBio PhD",
+    "links": {}
+  },
+  {
+    "name": "Dina Garmroudi",
+    "role": "Alumni",
+    "order": 93,
+    "photo": "/images/people/placeholder.jpg",
+    "years": "2022–2024",
+    "former_role": "Undergraduate Researcher",
+    "current_role": "Johns Hopkins Medical School",
+    "links": {}
+  },
+  {
+    "name": "Andrew Jackson III",
+    "role": "Alumni",
+    "order": 94,
+    "photo": "/images/people/placeholder.jpg",
+    "years": "2021–2022",
+    "former_role": "Undergraduate Researcher",
+    "current_role": "NYU Grossman Medical School",
+    "links": {}
+  },
+  {
+    "name": "Adriana Galindo Oelsner",
+    "role": "Alumni",
+    "order": 95,
+    "photo": "/images/people/placeholder.jpg",
+    "years": "2024",
+    "former_role": "Undergraduate Researcher",
+    "current_role": "Yale BBS PhD Program",
+    "links": {}
+  },
+  {
+    "name": "Ahlem Dorgham",
+    "role": "Alumni",
+    "order": 96,
+    "photo": "/images/people/placeholder.jpg",
+    "years": "2022",
+    "former_role": "Dean's Fellow",
+    "current_role": "Research Assistant, Yale-NUS",
+    "links": {}
+  },
+  {
+    "name": "Christian Guirgis",
+    "role": "Alumni",
+    "order": 97,
+    "photo": "/images/people/placeholder.jpg",
+    "years": "2023",
+    "former_role": "Undergraduate Researcher",
+    "links": {}
+  },
+  {
+    "name": "Mackenzie Altuzar",
+    "role": "Alumni",
+    "order": 98,
+    "photo": "/images/people/placeholder.jpg",
+    "years": "2024",
+    "former_role": "Undergraduate Researcher",
+    "links": {}
   }
 ]
