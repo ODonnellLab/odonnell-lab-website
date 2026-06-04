@@ -356,6 +356,23 @@ a { color: var(--accent); }
 .research-panel-body p { font-size: 14px; line-height: 1.8; }
 .research-panel-body p:last-child { margin-bottom: 0; }
 
+.panel-media {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.panel-media::-webkit-scrollbar { display: none; }
+.panel-media-item {
+  height: 180px;
+  width: auto;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+
 .panel-pubs {
   margin-top: 1.25rem;
   padding-top: 1rem;
