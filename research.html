@@ -157,6 +157,12 @@ function mediaEl(file) {
   return img;
 }
 
+function fileCaption(f) {
+  return f.replace(/\.[^.]+$/, '')
+    .replace(/([a-z])([A-Z])/g, '$1 $2')
+    .replace(/[-_]/g, ' ');
+}
+
 loadData('/data/research-media.json').then(media => {
   document.querySelectorAll('.panel-media[data-panel]').forEach(div => {
     const files = media[div.dataset.panel] || [];
@@ -164,6 +170,10 @@ loadData('/data/research-media.json').then(media => {
       const wrap = document.createElement('div');
       wrap.className = 'panel-media-wrap';
       wrap.appendChild(mediaEl(`${div.dataset.panel}/${f}`));
+      const cap = document.createElement('div');
+      cap.className = 'panel-media-caption';
+      cap.textContent = fileCaption(f);
+      wrap.appendChild(cap);
       div.appendChild(wrap);
     });
   });
