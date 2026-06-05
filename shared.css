@@ -400,9 +400,7 @@ a { color: var(--accent); }
   opacity: 0;
   transition: opacity 0.2s ease;
   pointer-events: none;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: normal;
 }
 .panel-media-wrap:hover .panel-media-caption { opacity: 1; }
 
