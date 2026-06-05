@@ -11,10 +11,10 @@
     "ShortWormEatingBacteria.mp4"
   ],
   "captions": {
-    "Fluorescent bacteria.png": "Fluorescent bacteria",
-    "GreenWorms.jpg": "Green worms",
-    "gcamp_plate_HC.gif": "GCaMP plate, high content",
-    "Feeding_gcamp.gif": "Feeding GCaMP",
-    "ShortWormEatingBacteria.mp4": "Worm eating bacteria"
+    "Fluorescent bacteria.png": "Bacteria expressing a red fluorescent protein",
+    "GreenWorms.jpg": "Worms expressing GFP broadly and RFP in the pharynx",
+    "gcamp_plate_HC.gif": "Pharynx GCaMP recording feeding behavior",
+    "Feeding_gcamp.gif": "Pharynx GCaMP recording feeding behavior",
+    "ShortWormEatingBacteria.mp4": "Worm eating fluorescent bacteria"
   }
 }
