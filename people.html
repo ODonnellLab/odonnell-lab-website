@@ -99,7 +99,7 @@ async function renderPeople() {
 
   peopleSection.innerHTML = sortedGroups.map(([role, members]) => `
     <div class="people-group-label">${role}</div>
-    <div class="people-grid">
+    <div class="people-grid${role === 'Alumni' ? ' people-grid-alumni' : ''}">
       ${members.map(p => `
         <div class="person-card">
           <img class="person-photo" src="${p.photo}" alt="${p.name}" onerror="this.src='/images/people/placeholder.jpg'">

@@ -208,6 +208,8 @@ a { color: var(--accent); }
 .hero-image-panel {
   position: relative;
   overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }
 .hero-image-panel img {
   width: 100%;
@@ -467,6 +469,11 @@ a { color: var(--accent); }
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1.25rem;
 }
+.people-grid-alumni {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+.people-grid-alumni .person-photo { aspect-ratio: 4 / 3; }
 .person-card {
   background: var(--surface);
   border: 1px solid var(--border);

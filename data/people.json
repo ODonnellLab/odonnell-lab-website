@@ -40,23 +40,9 @@
     "links": {}
   },
   {
-    "name": "Sarah Mahmoud",
+    "name": "Nick Borruso",
     "role": "Undergraduate Researcher",
     "order": 30,
-    "photo": "/images/people/placeholder.jpg",
-    "links": {}
-  },
-  {
-    "name": "Caroline Utermann",
-    "role": "Undergraduate Researcher",
-    "order": 31,
-    "photo": "/images/people/placeholder.jpg",
-    "links": {}
-  },
-  {
-    "name": "Patricia Joseph",
-    "role": "Undergraduate Researcher",
-    "order": 32,
     "photo": "/images/people/placeholder.jpg",
     "links": {}
   },
@@ -143,6 +129,34 @@
     "order": 98,
     "photo": "/images/people/placeholder.jpg",
     "years": "2024",
+    "former_role": "Undergraduate Researcher",
+    "links": {}
+  },
+  {
+    "name": "Sarah Mahmoud",
+    "role": "Alumni",
+    "order": 99,
+    "photo": "/images/people/placeholder.jpg",
+    "years": "2024–2026",
+    "former_role": "Undergraduate Researcher",
+    "links": {}
+  },
+  {
+    "name": "Caroline Utermann",
+    "role": "Alumni",
+    "order": 100,
+    "photo": "/images/people/placeholder.jpg",
+    "years": "2024–2026",
+    "former_role": "Undergraduate Researcher",
+    "current_role": "Cambridge PhD (Gates Cambridge Fellow)",
+    "links": {}
+  },
+  {
+    "name": "Patricia Joseph",
+    "role": "Alumni",
+    "order": 101,
+    "photo": "/images/people/placeholder.jpg",
+    "years": "2024–2026",
     "former_role": "Undergraduate Researcher",
     "links": {}
   }
