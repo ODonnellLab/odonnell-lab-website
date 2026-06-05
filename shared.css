@@ -211,7 +211,8 @@ a { color: var(--accent); }
   display: flex;
   flex-direction: column;
 }
-.hero-image-panel img {
+.hero-image-panel img,
+.hero-image-panel video {
   flex: 1;
   min-height: 0;
   width: 100%;
