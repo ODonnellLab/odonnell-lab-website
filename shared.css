@@ -368,14 +368,20 @@ a { color: var(--accent); }
   scrollbar-width: none;
 }
 .panel-media::-webkit-scrollbar { display: none; }
-.panel-media-item {
-  height: 180px;
-  width: auto;
-  border-radius: 6px;
-  object-fit: cover;
+.panel-media-wrap {
   flex-shrink: 0;
-  display: block;
+  height: 180px;
+  border-radius: 6px;
+  overflow: hidden;
 }
+.panel-media-item {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.panel-media-wrap:hover .panel-media-item { transform: scale(1.08); }
 
 .panel-pubs {
   margin-top: 1.25rem;

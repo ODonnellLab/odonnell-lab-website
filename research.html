@@ -160,7 +160,12 @@ function mediaEl(file) {
 loadData('/data/research-media.json').then(media => {
   document.querySelectorAll('.panel-media[data-panel]').forEach(div => {
     const files = media[div.dataset.panel] || [];
-    files.forEach(f => div.appendChild(mediaEl(`${div.dataset.panel}/${f}`)));
+    files.forEach(f => {
+      const wrap = document.createElement('div');
+      wrap.className = 'panel-media-wrap';
+      wrap.appendChild(mediaEl(`${div.dataset.panel}/${f}`));
+      div.appendChild(wrap);
+    });
   });
 });
 </script>
