@@ -164,6 +164,7 @@ function fileCaption(f) {
 }
 
 loadData('/data/research-media.json').then(media => {
+  const captions = media.captions || {};
   document.querySelectorAll('.panel-media[data-panel]').forEach(div => {
     const files = media[div.dataset.panel] || [];
     files.forEach(f => {
@@ -172,7 +173,7 @@ loadData('/data/research-media.json').then(media => {
       wrap.appendChild(mediaEl(`${div.dataset.panel}/${f}`));
       const cap = document.createElement('div');
       cap.className = 'panel-media-caption';
-      cap.textContent = fileCaption(f);
+      cap.textContent = captions[f] || fileCaption(f);
       wrap.appendChild(cap);
       div.appendChild(wrap);
     });
