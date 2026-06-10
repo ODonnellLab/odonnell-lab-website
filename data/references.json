@@ -888,5 +888,110 @@
       "methods",
       "feeding"
     ]
+  },
+  "worthy-2018-chem-senses": {
+    "label": "Worthy et al., Chem Senses 2018",
+    "doi": "10.1093/chemse/bjy001",
+    "url": "https://doi.org/10.1093/chemse/bjy001",
+    "synopsis": "Identifies the volatile blend that C. elegans uses to recognize the pathogen Serratia marcescens. Of five major volatiles released by the bacterium, only acetone and 2-butanone drive attraction, both detected by AWC^ON neurons. Reveals the molecular specificity underlying olfactory pathogen recognition \u2014 the worm is attracted to, not repelled by, these specific signals.",
+    "paths": [
+      "smell",
+      "pathogen"
+    ],
+    "tags": [
+      "olfaction",
+      "pathogen",
+      "chemoreceptors"
+    ]
+  },
+  "choi-2015-isme-j": {
+    "label": "Choi et al., ISME J 2015",
+    "doi": "10.1038/ismej.2015.134",
+    "url": "https://doi.org/10.1038/ismej.2015.134",
+    "synopsis": "C. elegans is attracted to lactic acid bacteria through olfactory detection of diacetyl, a fermentation byproduct produced in the presence of citrate. Wild nematodes isolated from decomposing fruit show attraction to diacetyl from co-isolated bacteria, demonstrating an ecologically relevant chemosensory interaction. Grounds the well-characterized diacetyl/AWA olfactory response in a natural host-microbiome context.",
+    "paths": [
+      "smell"
+    ],
+    "tags": [
+      "olfaction",
+      "microbiome",
+      "chemical-ecology"
+    ]
+  },
+  "choi-2022-curr-biol": {
+    "label": "Choi et al., Curr Biol 2022",
+    "doi": "10.1016/j.cub.2021.11.035",
+    "url": "https://doi.org/10.1016/j.cub.2021.11.035",
+    "synopsis": "A single chemosensory GPCR, SRI-14, expressed in two distinct neuron types mediates opposite behavioral responses to dimethyl trisulfide depending on concentration: attraction at low levels, avoidance at high. The same receptor in different circuit contexts generates opposing outputs, showing how concentration-dependent valence switching can emerge from a shared molecular detector without requiring separate receptors for attraction and repulsion.",
+    "paths": [
+      "smell"
+    ],
+    "tags": [
+      "olfaction",
+      "chemoreceptors",
+      "avoidance"
+    ]
+  },
+  "prakash-2022-biorxiv": {
+    "label": "Prakash et al., bioRxiv 2022",
+    "doi": "10.1101/2022.01.27.477966",
+    "url": "https://doi.org/10.1101/2022.01.27.477966",
+    "synopsis": "Pseudomonas aeruginosa produces pyrrole, a volatile heterocyclic compound that attracts C. elegans via AWA sensory neurons. In the presence of competing odor cues, pyrrole influences food choice toward P. aeruginosa despite its pathogenicity. Illustrates how a single bacterial volatile can shape olfactory decision-making in a multi-odor environment.",
+    "paths": [
+      "smell",
+      "pathogen"
+    ],
+    "tags": [
+      "olfaction",
+      "pathogen",
+      "chemical-ecology"
+    ]
+  },
+  "siddiqui-2026-elife": {
+    "label": "Siddiqui et al., eLife 2026",
+    "doi": "10.7554/eLife.101936",
+    "url": "https://doi.org/10.7554/eLife.101936",
+    "synopsis": "The GPCR SNIF-1 in AWC olfactory neurons mediates preference for leucine-enriched bacteria by binding isoamyl alcohol, the dominant volatile emitted by these strains. Prior odor exposure reduces the preference, indicating habituation. Defines a receptor-ligand module that links olfactory detection of a specific bacterial volatile to nutritional foraging decisions.",
+    "paths": [
+      "smell"
+    ],
+    "tags": [
+      "olfaction",
+      "chemoreceptors",
+      "foraging",
+      "food-quality"
+    ]
+  },
+  "pradel-2007-pnas": {
+    "label": "Pradel et al., PNAS 2007",
+    "doi": "10.1073/pnas.0610281104",
+    "url": "https://doi.org/10.1073/pnas.0610281104",
+    "synopsis": "C. elegans detects serrawettin W2, a cyclic lipodepsipentapeptide secreted by pathogenic Serratia marcescens, and avoids bacterial lawns producing it. Avoidance requires AWB chemosensory neurons and the toll-like receptor tol-1. Identifies a molecular pathogen-associated pattern recognized by the gustatory system, showing how taste contributes to innate immune-like food rejection.",
+    "paths": [
+      "taste",
+      "pathogen"
+    ],
+    "tags": [
+      "gustation",
+      "pathogen",
+      "avoidance",
+      "innate-immunity"
+    ]
+  },
+  "brissette-2024-sci-adv": {
+    "label": "Brissette et al., Sci Adv 2024",
+    "doi": "10.1126/sciadv.adj4387",
+    "url": "https://doi.org/10.1126/sciadv.adj4387",
+    "synopsis": "Polyamines \u2014 cadaverine, putrescine, and spermidine \u2014 produced by E. coli activate chemosensory neurons and AIB interneurons to drive positive chemotaxis toward nutritive bacteria. The same circuit detects signals from the pathogen Enterococcus faecalis through different sensory inputs. Identifies polyamines as a class of microbe-derived chemical identifiers that help C. elegans distinguish beneficial from harmful bacteria.",
+    "paths": [
+      "taste",
+      "pathogen"
+    ],
+    "tags": [
+      "gustation",
+      "pathogen",
+      "foraging",
+      "microbiome"
+    ]
   }
 }
