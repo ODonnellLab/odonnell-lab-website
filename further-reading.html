@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Further Reading — ODonnell Lab</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+  .fr-container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .fr-intro { color: #8b949e; font-size: 15px; line-height: 1.7; margin-bottom: 3rem; }
+  .fr-intro a { color: var(--accent); }
+  .path-section { margin-bottom: 3rem; }
+  .path-heading {
+    font-family: var(--mono, monospace);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border-bottom: 1px solid #21262d;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .ref-entry { margin-bottom: 1.5rem; }
+  .ref-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e6edf3;
+    margin-bottom: 0.3rem;
+  }
+  .ref-label a { color: inherit; text-decoration: none; border-bottom: 1px solid #30363d; }
+  .ref-label a:hover { border-color: var(--accent); color: var(--accent); }
+  .ref-doi { font-family: var(--mono, monospace); font-size: 11px; color: #8b949e; margin-bottom: 0.4rem; }
+  .ref-synopsis { font-size: 14px; line-height: 1.7; color: #8b949e; }
+  .ref-synopsis.todo { font-style: italic; color: #484f58; }
+  .fr-loading { color: #8b949e; font-style: italic; padding: 2rem 0; }
+  .fr-error   { color: #f85149; padding: 2rem 0; }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <a href="index.html" class="site-logo">⬡ ODONNELL LAB</a>
+  <nav class="site-nav">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="people.html">People</a>
+    <a href="publications.html">Publications</a>
+    <a href="news.html">News</a>
+    <a href="join.html">Join Us</a>
+  </nav>
+</header>
+
+<div class="fr-container">
+  <h1 style="font-size:1.6rem;margin-bottom:0.5rem;">Further Reading</h1>
+  <p class="fr-intro">
+    References behind <a href="https://worm-mind-game.pages.dev" target="_blank" rel="noopener">Explore the Mind of the Worm</a> — an interactive introduction to C. elegans neuroscience. Papers are grouped by the topic they appear in, ordered from foundational to specialized. Lab papers are marked with ⬡.
+  </p>
+
+  <div id="fr-content">
+    <p class="fr-loading">Loading references…</p>
+  </div>
+</div>
+
+<script>
+const PATH_LABELS = {
+  smell:       'Olfaction — smell path',
+  taste:       'Gustation — taste path',
+  touch:       'Mechanosensation — touch path',
+  locomotion:  'Locomotion',
+  pharynx:     'Pharynx &amp; feeding',
+  pathogen:    'Pathogen detection &amp; avoidance',
+  predator:    'Predator detection',
+  hunger:      'Hunger &amp; intertissue signaling',
+};
+
+const LAB_DOIS = new Set([
+  '10.1038/s41586-020-2395-5',
+  '10.1371/journal.pgen.1007213',
+  '10.1101/2025.10.20.683577',
+  '10.64898/2026.02.14.704838',
+]);
+
+async function loadAndRender() {
+  const container = document.getElementById('fr-content');
+  let refs;
+  try {
+    const resp = await fetch('data/references.json');
+    refs = await resp.json();
+  } catch(e) {
+    container.innerHTML = '<p class="fr-error">Could not load references. Please try again later.</p>';
+    return;
+  }
+
+  // group by path
+  const byPath = {};
+  for (const [slug, ref] of Object.entries(refs)) {
+    if (ref._note) continue; // skip internal-only entries
+    for (const path of (ref.paths || [])) {
+      if (!byPath[path]) byPath[path] = [];
+      byPath[path].push({ slug, ...ref });
+    }
+  }
+
+  const pathOrder = Object.keys(PATH_LABELS);
+  const html = pathOrder.map(path => {
+    const entries = byPath[path];
+    if (!entries?.length) return '';
+    const isLab = r => LAB_DOIS.has(r.doi);
+    entries.sort((a, b) => (isLab(b) ? 1 : 0) - (isLab(a) ? 1 : 0));
+
+    const items = entries.map(r => {
+      const labBadge = isLab(r) ? ' <span title="O\'Donnell lab">⬡</span>' : '';
+      const synopsisClass = (!r.synopsis || r.synopsis.startsWith('TODO')) ? 'todo' : '';
+      const synopsisText  = (!r.synopsis || r.synopsis.startsWith('TODO')) ? 'Synopsis coming soon.' : r.synopsis;
+      return `
+        <div class="ref-entry">
+          <div class="ref-label"><a href="${r.url}" target="_blank" rel="noopener">${r.label}</a>${labBadge}</div>
+          <div class="ref-doi">${r.doi}</div>
+          <div class="ref-synopsis ${synopsisClass}">${synopsisText}</div>
+        </div>`;
+    }).join('');
+
+    return `
+      <div class="path-section">
+        <div class="path-heading">${PATH_LABELS[path]}</div>
+        ${items}
+      </div>`;
+  }).join('');
+
+  container.innerHTML = html || '<p class="fr-loading">No references found.</p>';
+}
+
+loadAndRender();
+</script>
+</body>
+</html>
