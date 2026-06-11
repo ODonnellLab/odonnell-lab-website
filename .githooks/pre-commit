@@ -1,0 +1,21 @@
+#!/bin/bash
+# Block files over 50MB; warn on files over 10MB.
+# GitHub hard limit is 100MB; 50MB triggers a warning from GitHub.
+
+WARN_KB=10240   # 10 MB
+BLOCK_KB=51200  # 50 MB
+
+exit_code=0
+
+while IFS= read -r file; do
+  [ -f "$file" ] || continue
+  size_kb=$(du -k "$file" | cut -f1)
+  if [ "$size_kb" -ge "$BLOCK_KB" ]; then
+    echo "ERROR: $file is $(du -sh "$file" | cut -f1) — exceeds 50MB GitHub limit. Use Git LFS or compress before committing."
+    exit_code=1
+  elif [ "$size_kb" -ge "$WARN_KB" ]; then
+    echo "WARNING: $file is $(du -sh "$file" | cut -f1) — consider compressing large media files."
+  fi
+done < <(git diff --cached --name-only --diff-filter=ACM)
+
+exit $exit_code
