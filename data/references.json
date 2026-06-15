@@ -3,7 +3,7 @@
     "label": "O'Donnell et al., Nature 2020",
     "doi": "10.1038/s41586-020-2395-5",
     "url": "https://doi.org/10.1038/s41586-020-2395-5",
-    "synopsis": "TODO \u2014 please fill in.",
+    "synopsis": "We show that tyramine produced by commensal Providencia gut bacteria bypasses host tyramine biosynthesis to manipulate a host sensory decision in C. elegans. Bacterially produced tyramine is converted to octopamine by the host, which then targets OCTR-1 receptors on ASH nociceptive neurons to modulate aversive olfactory behavior. C. elegans colonized by Providencia preferentially select these bacteria in food choice assays, a bias requiring bacterially produced tyramine and host octopamine signaling \u2014 demonstrating that a gut bacterium mimics a host neurotransmitter to promote fitness of both partners.",
     "paths": [
       "smell",
       "touch",
@@ -21,7 +21,7 @@
     "label": "O'Donnell et al., PLoS Genetics 2018",
     "doi": "10.1371/journal.pgen.1007213",
     "url": "https://doi.org/10.1371/journal.pgen.1007213",
-    "synopsis": "TODO \u2014 please fill in.",
+    "synopsis": "We show that TORC2 acts in the intestine as a hub for communicating feeding state to the nervous system in C. elegans. During development, intestinal TORC2 regulates neuronal expression of daf-7 TGF-\u03b2 and daf-28 insulin-like peptide, which reflect bacterial-diet-dependent feeding status and integrate food signals with external cues to control the reproductive growth vs. dauer decision. In adults, intestinal TORC2 similarly modulates food-regulated foraging behavior via PDF-2/PDFR-1 neuropeptide signaling, demonstrating a conserved gut-to-brain axis that adjusts neuronal function according to internal nutritional state.",
     "paths": [
       "taste",
       "hunger"
@@ -36,7 +36,7 @@
     "label": "Malaiwong et al., bioRxiv 2025",
     "doi": "10.1101/2025.10.20.683577",
     "url": "https://doi.org/10.1101/2025.10.20.683577",
-    "synopsis": "TODO \u2014 please fill in.",
+    "synopsis": "We show that C. elegans synthesizes lipidated neurohormones \u2014 conjugates of octopamine and fat metabolism-derived fatty acids \u2014 to relay information about lipid metabolic status to the nervous system. The incorporated fatty acids normally act as agonists of NHR-49/PPAR\u03b1. Intracellular hydrolysis releases free octopamine that activates neuronal receptors to inhibit aversive olfactory responses \u2014 but only when prior lipid metabolism has occurred. An intertissue trafficking pathway shuttles octopamine into the intestine for chemical modification before neuronal import, coupling neurotransmitter signaling to lipid homeostasis as a mechanism for state-dependent behavioral regulation.",
     "paths": [
       "taste",
       "hunger"
@@ -52,7 +52,7 @@
     "label": "Zang et al., bioRxiv 2026",
     "doi": "10.64898/2026.02.14.704838",
     "url": "https://doi.org/10.64898/2026.02.14.704838",
-    "synopsis": "TODO \u2014 please fill in.",
+    "synopsis": "In this collaborative work, we show that the freshwater sponge Spongilla lacustris synthesizes monoamines \u2014 tryptamine, phenethylamine, and tyramine \u2014 to coordinate canal contraction and relaxation in the absence of neurons or muscles. Tryptamine activates GPCR signaling and Rho GTPases, remodeling adhesion and actomyosin networks in contractile canal epithelia to drive localized constrictions and whole-body deflations. These findings define an ancestral monoaminergic system linking secretory and contractile cell types that predates neurons, suggesting that chemical neurotransmission evolved from pre-neuronal coordination mechanisms later elaborated for synaptic neuromodulation.",
     "paths": [
       "smell",
       "touch"
@@ -96,25 +96,11 @@
       "review"
     ]
   },
-  "bargmann-2006-wormbook-loco": {
-    "label": "Bargmann, WormBook 2006 \u2014 Locomotion",
-    "doi": "10.1895/wormbook.1.46.1",
-    "url": "https://doi.org/10.1895/wormbook.1.46.1",
-    "synopsis": "TODO \u2014 verify author and chapter title for this WormBook DOI. Currently cited for AVB/AVA command interneuron circuit controlling forward and reverse locomotion.",
-    "paths": [
-      "locomotion"
-    ],
-    "tags": [
-      "locomotion",
-      "motor-circuit",
-      "review"
-    ]
-  },
   "bargmann-1993-cell": {
     "label": "Bargmann et al., Cell 1993",
     "doi": "10.1016/0092-8674(93)80053-H",
     "url": "https://doi.org/10.1016/0092-8674(93)80053-H",
-    "synopsis": "TODO \u2014 confirm synopsis. Characterizes odorant-selective receptor genes expressed in AWC and AWA neurons; different odorant classes are detected by different neuron subsets, suggesting combinatorial coding of odor identity.",
+    "synopsis": "Characterizes odorant-selective receptor genes expressed in AWC and AWA neurons; different odorant classes are detected by different neuron subsets, and single neurons can detect and discriminate potentially many odors.",
     "paths": [
       "smell"
     ],
@@ -127,7 +113,7 @@
     "label": "Chalfie et al., J Neurosci 1985",
     "doi": "10.1523/JNEUROSCI.05-04-00956.1985",
     "url": "https://doi.org/10.1523/JNEUROSCI.05-04-00956.1985",
-    "synopsis": "Defines the mechanosensory touch circuit in C. elegans: ALM and AVM mediate anterior body touch; PLM and PVM mediate posterior touch. Identifies the MEC gene family encoding the mechanosensory ion channel complex (MEC-4/MEC-2) and traces the pathway from touch neurons through interneurons to motor output.",
+    "synopsis": "Defines the mechanosensory touch circuit in C. elegans using electron microscopy circuit reconstruction and laser ablation. Six touch receptor neurons feed into two pathways for anterior touch (via AVD and AVB interneurons) and one pathway for posterior touch (via PVC interneurons). The anterior circuit matures during development: touch cells become coupled by gap junctions and the AVB pathway is added to the pre-existing AVD pathway. Touch cells also synapse broadly onto non-locomotor targets, suggesting touch stimulation modifies multiple behaviors.",
     "paths": [
       "touch"
     ],
@@ -181,26 +167,11 @@
       "associative-memory"
     ]
   },
-  "chalasani-2010-plos-biol": {
-    "label": "Chalasani et al., PLoS Biol 2010",
-    "doi": "10.1371/journal.pbio.1000372",
-    "url": "https://doi.org/10.1371/journal.pbio.1000372",
-    "synopsis": "Shows that neuropeptide signals released by interneurons feed back onto AWC olfactory neurons, modifying the dynamics of their odor-evoked calcium responses. Demonstrates that circuit feedback can tune primary sensory representations, with implications for adaptation and gain control in chemosensory processing.",
-    "paths": [
-      "smell"
-    ],
-    "tags": [
-      "olfaction",
-      "neuromodulation",
-      "neuropeptides"
-    ],
-    "_note": "This paper is currently misattributed as 'Kauffman et al.' in nodes.json smell-familiar choice 1 \u2014 it is NOT a food-associative learning paper. Do not use as a citation for positive olfactory conditioning."
-  },
   "song-2013-elife": {
     "label": "Song et al., eLife 2013",
     "doi": "10.7554/eLife.00329",
     "url": "https://doi.org/10.7554/eLife.00329",
-    "synopsis": "Demonstrates that recognition of a familiar food activates enhanced pharyngeal pumping through an endocrine serotonin signal from NSM neurons. Familiar food odor triggers NSM to release serotonin into the body cavity, accelerating the feeding rate \u2014 linking olfactory memory to a downstream change in food intake.",
+    "synopsis": "Shows that C. elegans forms a memory of familiar foods and increases its feeding response upon re-encountering them. Recognition of familiar food activates ADF chemosensory neurons, which release serotonin that acts humorally on SER-7 receptors in MC pharyngeal motor neurons to accelerate feeding rate. Novel food overrides this effect by suppressing ADF activity, revealing how familiarity discrimination shapes food intake through a defined chemosensory-to-motor circuit.",
     "paths": [
       "smell",
       "pharynx"
@@ -232,7 +203,7 @@
     "label": "Ha et al., Neuron 2010",
     "doi": "10.1016/j.neuron.2010.11.025",
     "url": "https://doi.org/10.1016/j.neuron.2010.11.025",
-    "synopsis": "Maps the neural circuit for aversive olfactory learning in C. elegans, placing AWC olfactory neurons upstream of AIY, AIB, and RIA interneurons. Serotonergic modulation from ADF neurons is required for the memory circuit to form conditioned avoidance, revealing how neuromodulator tone gates learning.",
+    "synopsis": "Maps the complete neural circuit for naive and learned olfactory preference in C. elegans from sensory input to motor output. Naive preference for pathogen odors is encoded by AWB and AWC sensory neurons and their downstream interneurons; learned aversion after pathogen exposure requires a separate ADF serotonergic modulatory circuit that alters signal transduction to downstream motor neurons. The behavioral switch between naive and learned preference arises from interplay between these two circuits rather than modification of a single shared pathway.",
     "paths": [
       "smell",
       "pathogen"
@@ -264,7 +235,7 @@
     "label": "Hills et al., J Neurosci 2004",
     "doi": "10.1523/JNEUROSCI.1569-03.2004",
     "url": "https://doi.org/10.1523/JNEUROSCI.1569-03.2004",
-    "synopsis": "Shows that dopamine and glutamate co-regulate area-restricted search in C. elegans. On food, worms suppress reversals and run forward; off food, they increase pirouetting to search locally. Dopamine signals food presence and suppresses local search; its loss leads to inappropriate long-range dispersal.",
+    "synopsis": "Shows that dopaminergic and glutamatergic signaling co-regulate area-restricted search (ARS) in C. elegans. Dopamine released on food contact modulates glutamatergic signaling via GLR-1/GLR-2 AMPA-type receptors and the EAT-4 vesicular glutamate transporter in the locomotory control circuit, increasing turn frequency to keep worms near food. Loss of either dopamine signaling or glutamate receptor function eliminates ARS; dopamine preincubation restores ARS in dopamine-deficient but not glutamate receptor mutants, placing glutamate downstream of dopamine in the same pathway.",
     "paths": [
       "smell",
       "locomotion"
@@ -279,7 +250,7 @@
     "label": "Gray et al., PNAS 2005",
     "doi": "10.1073/pnas.0409009101",
     "url": "https://doi.org/10.1073/pnas.0409009101",
-    "synopsis": "Characterizes the circuit logic of chemotaxis and navigation in C. elegans. Worms modulate reversal and turn frequency based on odor gradient direction, using the pirouette mechanism: reversals are triggered when moving down an attractant gradient, and suppressed when moving up. AIY and AIB interneurons act as sign-inverting and sign-preserving relays in this computation.",
+    "synopsis": "Dissects the neural circuit for exploratory behavior in C. elegans. After food removal, AWC olfactory neurons, ASK gustatory neurons, and AIB interneurons drive local search via increased reversals and omega turns; over 30 minutes, ASI gustatory neurons and AIY interneurons suppress these behaviors to promote long-range dispersal. Downstream motor neurons encode specific movement parameters: SMD sets omega turn amplitude, RIV specifies the ventral bias of post-reversal turns, and SMB sets sinusoidal movement amplitude. The same circuit components are implicated in chemotaxis and thermotaxis, suggesting a shared substrate for multiple navigation strategies.",
     "paths": [
       "smell",
       "locomotion"
@@ -294,7 +265,7 @@
     "label": "Worthy et al., PLOS ONE 2018",
     "doi": "10.1371/journal.pone.0201158",
     "url": "https://doi.org/10.1371/journal.pone.0201158",
-    "synopsis": "TODO \u2014 confirm synopsis. Characterizes volatile odorants produced by preferred bacterial food strains and their role in guiding C. elegans food choice via olfaction.",
+    "synopsis": "Characterizes volatile odorants produced by preferred bacteria that guide food choice in C. elegans.",
     "paths": [
       "smell"
     ],
@@ -308,7 +279,7 @@
     "label": "Zhang et al., J Biol Chem 2016",
     "doi": "10.1074/jbc.M116.741132",
     "url": "https://doi.org/10.1074/jbc.M116.741132",
-    "synopsis": "TODO \u2014 confirm synopsis. Describes a 'Trojan Horse' mechanism by which harmful bacteria produce attractive odorants that lure C. elegans, causing olfactory deception that leads to ingestion of a harmful food source.",
+    "synopsis": "Describes a 'Trojan Horse' mechanism by which harmful bacteria produce attractive odorants that lure C. elegans, causing olfactory deception that leads to ingestion of a harmful food source.",
     "paths": [
       "smell",
       "pathogen"
@@ -336,9 +307,9 @@
   },
   "avery-1989-neuron": {
     "label": "Avery & Horvitz, Neuron 1989",
-    "doi": "10.1016/0896-6273(89)90092-2",
-    "url": "https://doi.org/10.1016/0896-6273(89)90092-2",
-    "synopsis": "Identifies the pharyngeal nervous system of C. elegans as a semi-autonomous neuromuscular unit with its own pattern generator. The MC neuron excites pharyngeal muscles to drive pump cycles; M3 provides inhibitory input controlling relaxation between cycles. Establishes the basic circuit architecture of feeding-rate control.",
+    "doi": "10.1016/0896-6273(89)90206-7",
+    "url": "https://doi.org/10.1016/0896-6273(89)90206-7",
+    "synopsis": "Uses laser ablation to show that pharyngeal feeding requires two separately controlled muscle motions: isthmus peristalsis, driven solely by the M4 neuron, and pumping, stimulated by MC neurons in response to food but capable of continuing without them. Destroying the entire pharyngeal nervous system fails to abolish pumping, suggesting an autonomous myogenic rhythm. Establishes the basic circuit architecture of feeding-rate control and notes that most of the C. elegans nervous system is dispensable for viability under laboratory conditions.",
     "paths": [
       "pharynx"
     ],
@@ -350,9 +321,9 @@
   },
   "avery-2003-j-exp-biol": {
     "label": "Avery & Shtonda, J Exp Biol 2003",
-    "doi": "10.1242/jeb.00375",
-    "url": "https://doi.org/10.1242/jeb.00375",
-    "synopsis": "Demonstrates that C. elegans actively selects among bacterial food sources of different nutritional quality and discriminates against bacteria it cannot efficiently grind. The pm5 grinder muscle is required to lyse bacteria before intestinal absorption \u2014 bacteria that cannot be lysed pass through without nutritional benefit, and worms learn to avoid them.",
+    "doi": "10.1242/jeb.00433",
+    "url": "https://doi.org/10.1242/jeb.00433",
+    "synopsis": "Uses video analysis and hydrodynamic simulation to explain how the C. elegans pharynx transports bacteria posteriorly despite operating at low Reynolds number, where purely reciprocal motions produce no net transport. Delayed relaxation of the isthmus relative to the corpus, combined with particle acceleration at the center of the pharyngeal lumen, generates efficient net posterior particle movement. The M3 inhibitory neuron controls relaxation timing and is critical for transport; the model predicts and confirms that smaller bacteria are more efficiently transported and thus better food sources.",
     "paths": [
       "pharynx",
       "taste"
@@ -367,7 +338,7 @@
     "label": "Maguire et al., Curr Biol 2011",
     "doi": "10.1016/j.cub.2011.06.063",
     "url": "https://doi.org/10.1016/j.cub.2011.06.063",
-    "synopsis": "Shows that C. elegans can escape from predacious nematophagous fungi by triggering mechanosensory reversal responses on contact with fungal hyphae. The touch circuit provides a last-resort escape mechanism, though constricting ring closure (~100ms) means escape is not guaranteed.",
+    "synopsis": "Shows that C. elegans uses anterior touch mechanosensory neurons to detect constricting hyphal rings of predacious Drechslerella fungi and escape via reversal. Escape requires not only reversal but tyramine-dependent suppression of exploratory head movements: tyramine released by RIM neurons acts via the LGC-55 channel in neck muscles and AVB neurons to coordinate backward locomotion with head immobilization, enabling smooth retraction from the ring. Tyramine signaling mutants (tdc-1, lgc-55) reverse normally but fail to suppress head movements and are caught more often in competition assays, demonstrating that this motor coordination has genuine selective value and likely reflects an evolutionary arms race between nematodes and nematophagous fungi.",
     "paths": [
       "predator"
     ],
@@ -381,7 +352,7 @@
     "label": "Hsueh et al., eLife 2017",
     "doi": "10.7554/eLife.20023",
     "url": "https://doi.org/10.7554/eLife.20023",
-    "synopsis": "Demonstrates that the nematophagous fungus Arthrobotrys oligospora attracts C. elegans by mimicking both food odorants and C. elegans sex pheromones. This chemical mimicry exploits the worm's own chemosensory system to lure prey within range of fungal constricting rings \u2014 a fatal attraction.",
+    "synopsis": "Shows that the nematophagous fungus Arthrobotrys oligospora attracts C. elegans by producing volatile olfactory mimics of food and sex cues. GC-MS analysis identified several attractive volatiles including sulfurous food-odor mimics and methyl 3-methyl-2-butenoate (MMB), a compound that elicits strong sex- and stage-specific attraction in adult hermaphrodites and females across Caenorhabditis species while interfering with mating \u2014 consistent with mimicry of a male sex pheromone. Attraction is mediated by AWC olfactory neurons. AWC-defective animals are caught less frequently, demonstrating a direct fitness cost of olfactory mimicry and suggesting an evolutionary arms race between nematodes and predacious fungi.",
     "paths": [
       "predator"
     ],
@@ -395,7 +366,7 @@
     "label": "Yu et al., Nat Commun 2021",
     "doi": "10.1038/s41467-021-25535-1",
     "url": "https://doi.org/10.1038/s41467-021-25535-1",
-    "synopsis": "Identifies 6-methyl-salicylic acid (6-MSA) as the volatile molecule produced by A. oligospora responsible for fatal attraction in C. elegans. Provides a specific molecular mechanism for olfactory predator mimicry, showing the worm's olfactory system cannot distinguish this fungal volatile from food-associated odorants.",
+    "synopsis": "Shows that the nematode-trapping fungus Duddingtonia flagrans uses 6-methyl-salicylic acid (6-MSA), a polyketide synthase product, as both a morphogen controlling spatiotemporal trap formation and a chemoattractant that lures C. elegans into fungal colonies. 6-MSA and its downstream metabolites arthrosporols both inhibit trap formation; the presence of nematodes suppresses 6-MSA and arthrosporol biosynthesis, enabling traps to form. Reveals 6-MSA as a quorum-sensing-like interkingdom signal mediating fungal predator-prey communication.",
     "paths": [
       "predator"
     ],
@@ -409,7 +380,7 @@
     "label": "Lin et al., iScience 2025",
     "doi": "10.1016/j.isci.2025.112792",
     "url": "https://doi.org/10.1016/j.isci.2025.112792",
-    "synopsis": "Finds that contact with nematode-trapping fungal hyphae triggers mechanosensory-dependent behavioral quiescence in C. elegans. Characterizes this as a novel defensive or conserved injury-response behavior activated through the touch circuit upon physical contact with fungal structures.",
+    "synopsis": "Shows that Arthrobotrys oligospora predation induces behavioral quiescence in C. elegans, dependent on activation of the sleep-promoting neurons ALA and RIS. Mechanosensation contributes to this quiescent state, suggesting that mechanical stress from fungal constriction activates the sleep/stress circuit. Provides insight into how prey nervous systems respond to active predation as a physiological stressor distinct from simple touch.",
     "paths": [
       "predator"
     ],
@@ -423,7 +394,7 @@
     "label": "Zaslaver et al., PNAS 2015",
     "doi": "10.1073/pnas.1423656112",
     "url": "https://doi.org/10.1073/pnas.1423656112",
-    "synopsis": "TODO \u2014 confirm synopsis. Examines sparse coding in the C. elegans olfactory system; characterizes how odor identity is represented and compressed across layers of the sensory circuit.",
+    "synopsis": "Examines sparse coding in the C. elegans olfactory system; characterizes how odor identity is represented and compressed across layers of the sensory circuit.",
     "paths": [
       "smell"
     ],
@@ -436,7 +407,7 @@
     "label": "Meisel et al., Cell 2014",
     "doi": "10.1016/j.cell.2014.09.011",
     "url": "https://doi.org/10.1016/j.cell.2014.09.011",
-    "synopsis": "TODO \u2014 confirm synopsis. Characterizes chemosensory detection of bacterially-produced secondary metabolites by C. elegans and the behavioral consequences.",
+    "synopsis": "Characterizes chemosensory detection of pathogen-produced secondary metabolites by C. elegans and the behavioral consequences.",
     "paths": [
       "smell",
       "pathogen"
@@ -449,23 +420,9 @@
   },
   "moore-2019a-cell": {
     "label": "Moore et al., Cell 2019",
-    "doi": "10.1016/j.cell.2019.01.040",
-    "url": "https://doi.org/10.1016/j.cell.2019.01.040",
-    "synopsis": "TODO \u2014 confirm synopsis. Reports transgenerational epigenetic memory in C. elegans.",
-    "paths": [
-      "pathogen"
-    ],
-    "tags": [
-      "transgenerational",
-      "epigenetics",
-      "learning"
-    ]
-  },
-  "moore-2019b-cell": {
-    "label": "Moore et al., Cell 2019",
     "doi": "10.1016/j.cell.2019.05.024",
     "url": "https://doi.org/10.1016/j.cell.2019.05.024",
-    "synopsis": "TODO \u2014 confirm synopsis. Characterizes pathogen avoidance learning and its transmission.",
+    "synopsis": "Characterizes pathogen avoidance learning and its transgenerational transmission in C. elegans.",
     "paths": [
       "pathogen",
       "smell"
@@ -473,14 +430,15 @@
     "tags": [
       "pathogen",
       "learning",
-      "transgenerational"
+      "transgenerational",
+      "epigenetics"
     ]
   },
   "kaletsky-2020-nature": {
     "label": "Kaletsky et al., Nature 2020",
     "doi": "10.1038/s41586-020-2699-5",
     "url": "https://doi.org/10.1038/s41586-020-2699-5",
-    "synopsis": "TODO \u2014 confirm synopsis. Demonstrates transgenerational inheritance of pathogen-specific small RNAs that confer avoidance behavior in offspring.",
+    "synopsis": "Demonstrates transgenerational inheritance of pathogen-specific small RNAs that confer avoidance behavior in offspring.",
     "paths": [
       "pathogen",
       "smell"
@@ -496,7 +454,7 @@
     "label": "Moore et al., Cell 2021",
     "doi": "10.1016/j.cell.2021.07.022",
     "url": "https://doi.org/10.1016/j.cell.2021.07.022",
-    "synopsis": "TODO \u2014 confirm synopsis.",
+    "synopsis": "Demonstrates that C. elegans co-opts Cer1 retrotransposon-encoded virus-like particles to transmit learned pathogen avoidance between animals and across generations. Cer1 mediates inter-tissue signaling from the germline to neurons required for inherited avoidance memory; wild strains carrying Cer1 can learn and inherit small-RNA-induced avoidance, revealing a genomic element co-opted for adaptive immune memory.",
     "paths": [
       "pathogen",
       "smell"
@@ -511,7 +469,7 @@
     "label": "Melo & Ruvkun, Cell 2012",
     "doi": "10.1016/j.cell.2012.02.050",
     "url": "https://doi.org/10.1016/j.cell.2012.02.050",
-    "synopsis": "TODO \u2014 confirm synopsis. Characterizes how C. elegans activates innate immune-like surveillance pathways in response to bacterial infection.",
+    "synopsis": "Disruption of core cellular processes (translation, respiration, protein turnover) triggers avoidance of normally attractive bacteria via a neuroendocrine axis requiring serotonin and Jnk signaling, suggesting C. elegans detects pathogens indirectly through surveillance of host cellular integrity.",
     "paths": [
       "pathogen"
     ],
@@ -524,7 +482,7 @@
     "label": "Prakash et al., EMBO J 2021",
     "doi": "10.15252/embj.2020106938",
     "url": "https://doi.org/10.15252/embj.2020106938",
-    "synopsis": "TODO \u2014 confirm synopsis.",
+    "synopsis": "Identifies 1-undecene from Pseudomonas aeruginosa as a volatile pathogen signal detected by C. elegans olfactory neurons, triggering a flight-or-fight behavioral response and demonstrating that bacterial volatiles can function as microbe-associated molecular patterns.",
     "paths": [
       "pathogen",
       "smell"
@@ -539,7 +497,7 @@
     "label": "Sternson et al., Curr Opin Neurobiol 2013",
     "doi": "10.1016/j.conb.2013.04.006",
     "url": "https://doi.org/10.1016/j.conb.2013.04.006",
-    "synopsis": "TODO \u2014 confirm synopsis. Review of neural circuits for hunger motivation across animals; contextualizes C. elegans feeding circuits within broader principles of hunger-driven behavior.",
+    "synopsis": "Review of neural circuits for hunger motivation across animals; contextualizes C. elegans feeding circuits within broader principles of hunger-driven behavior.",
     "paths": [
       "taste",
       "hunger"
@@ -554,7 +512,7 @@
     "label": "Rengarajan et al., PNAS 2019",
     "doi": "10.1073/pnas.1807454116",
     "url": "https://doi.org/10.1073/pnas.1807454116",
-    "synopsis": "TODO \u2014 confirm synopsis. Feeding state reconfigures sensory valence in C. elegans \u2014 the same odor can drive attraction or aversion depending on hunger state, demonstrating that motivational state rewires sensory circuit outputs.",
+    "synopsis": "Feeding state reconfigures sensory valence in C. elegans \u2014 the same odor can drive attraction or aversion depending on hunger state, demonstrating that motivational state rewires sensory circuit outputs.",
     "paths": [
       "smell",
       "hunger"
@@ -569,7 +527,7 @@
     "label": "Jang et al., PNAS 2019",
     "doi": "10.1073/pnas.1821716116",
     "url": "https://doi.org/10.1073/pnas.1821716116",
-    "synopsis": "TODO \u2014 confirm synopsis. Multiple sensory neurons mediate starvation-dependent aversive navigation; food deprivation reconfigures the sensory circuit so the same stimulus produces different behavioral outputs.",
+    "synopsis": "Shows that C. elegans learns to avoid salt concentrations associated with starvation, requiring integrated input from two taste neurons \u2014 ASER (the primary salt sensor) and ASG (newly implicated) \u2014 to bias turning behavior and navigate toward food after food deprivation.",
     "paths": [
       "smell",
       "hunger"
@@ -584,7 +542,7 @@
     "label": "Ryu et al., EMBO J 2018",
     "doi": "10.15252/embj.201798402",
     "url": "https://doi.org/10.15252/embj.201798402",
-    "synopsis": "TODO \u2014 confirm synopsis. Pheromone-mediated avoidance is regulated by insulin signaling, connecting metabolic state to chemosensory valence and revealing how internal nutritional state modulates social chemical signaling.",
+    "synopsis": "Pheromone-mediated avoidance is regulated by insulin signaling, connecting metabolic state to chemosensory valence and revealing how internal nutritional state modulates social chemical signaling.",
     "paths": [
       "smell",
       "hunger"
@@ -600,7 +558,7 @@
     "label": "Matty et al., PLOS Genetics 2022",
     "doi": "10.1371/journal.pgen.1010178",
     "url": "https://doi.org/10.1371/journal.pgen.1010178",
-    "synopsis": "TODO \u2014 confirm synopsis. Intestine-to-neuronal intertissue signaling during food deprivation alters risk-taking behavior in C. elegans; gut-derived signals shift the explore/exploit balance toward riskier food-seeking strategies.",
+    "synopsis": "Intestine-to-neuronal intertissue signaling during food deprivation alters risk-taking behavior in C. elegans; gut-derived signals shift the explore/exploit balance toward riskier food-seeking strategies.",
     "paths": [
       "taste",
       "hunger"
@@ -616,7 +574,7 @@
     "label": "Chao et al., Nat Neurosci 2004",
     "doi": "10.1038/nn1241",
     "url": "https://doi.org/10.1038/nn1241",
-    "synopsis": "TODO \u2014 confirm synopsis. Serotonin modulates the threshold of ASH-mediated nociceptive avoidance in C. elegans, showing how neuromodulator tone adjusts the sensitivity of aversive sensory responses based on internal state.",
+    "synopsis": "Serotonin modulates the threshold of ASH-mediated nociceptive avoidance in C. elegans, showing how neuromodulator tone adjusts the sensitivity of aversive sensory responses based on internal state.",
     "paths": [
       "touch",
       "hunger"
@@ -725,7 +683,7 @@
     "label": "Feng et al., Nat Commun 2025",
     "doi": "10.1038/s41467-025-65491-8",
     "url": "https://doi.org/10.1038/s41467-025-65491-8",
-    "synopsis": "Distinct serotonergic neuron classes use different serotonin receptors to promote either avoidance of unfavorable diets or preference for favorable ones. Serotonin integrates with dopamine and octopamine signals across distributed neural circuits to generate context-dependent evaluations of dietary quality. Shows how a single neuromodulator can drive opposite behavioral outcomes depending on which circuit it activates.",
+    "synopsis": "Identifies 22 E. coli metabolic mutants that induce aversion and stress responses in C. elegans, using genome-wide bacterial screening to probe how diet quality shapes foraging behavior. Different classes of serotonergic neurons promote aversion to non-preferred diets or retention on preferred diets through distinct serotonin receptors, revealing that a single neuromodulator drives opposing behavioral outcomes depending on circuit context. Serotonin is integrated with dopamine and octopamine across distributed circuits to generate context-dependent evaluation of dietary quality.",
     "paths": [
       "hunger",
       "smell"
@@ -951,7 +909,7 @@
     "label": "Siddiqui et al., eLife 2026",
     "doi": "10.7554/eLife.101936",
     "url": "https://doi.org/10.7554/eLife.101936",
-    "synopsis": "The GPCR SNIF-1 in AWC olfactory neurons mediates preference for leucine-enriched bacteria by binding isoamyl alcohol, the dominant volatile emitted by these strains. Prior odor exposure reduces the preference, indicating habituation. Defines a receptor-ligand module that links olfactory detection of a specific bacterial volatile to nutritional foraging decisions.",
+    "synopsis": "Shows that C. elegans uses olfaction to select leucine-supplemented bacteria from its native microbiota. Leucine-supplemented bacteria produce isoamyl alcohol (IAA) in highest abundance; prior adaptation to IAA diminishes the diet preference, indicating habituation. Preference requires AWC olfactory neurons, and SNIF-1 (formerly SRD-12), a GPCR in AWC, is identified as a receptor for IAA and mediator of dietary decisions. Defines a receptor-ligand module linking olfactory detection of a bacterial metabolite to foraging for essential amino acid-rich diets.",
     "paths": [
       "smell"
     ],
@@ -992,6 +950,54 @@
       "pathogen",
       "foraging",
       "microbiome"
+    ]
+  },
+  "kauffman-2010-plos-biol": {
+    "label": "Kauffman et al., PLoS Biol 2010",
+    "doi": "10.1371/journal.pbio.1000372",
+    "url": "https://doi.org/10.1371/journal.pbio.1000372",
+    "synopsis": "Establishes a system for studying associative learning, short-term memory, and long-term associative memory in C. elegans through chemotaxis assays, demonstrating that worms form positive associations between a neutral chemoattractant and food. Long-term but not short-term associative memory requires crh-1, the C. elegans CREB homolog, whose expression declines with age and correlates with memory performance. Insulin/IGF-1 signaling (daf-2 mutants) improves early adult memory and maintains learning ability with age; dietary restriction (eat-2 mutants) impairs long-term memory in young adults but maintains it longer. Reveals that longevity pathways have distinct and sometimes opposing effects on cognitive aging through their regulation of crh-1.",
+    "paths": [
+      "smell"
+    ],
+    "tags": [
+      "olfaction",
+      "learning",
+      "associative-memory",
+      "aging",
+      "insulin-signaling"
+    ]
+  },
+  "chalasani-2010-nat-neurosci": {
+    "label": "Chalasani et al., Nat Neurosci 2010",
+    "doi": "10.1038/nn.2526",
+    "url": "https://doi.org/10.1038/nn.2526",
+    "synopsis": "Shows that neuropeptide signals released by interneurons feed back onto AWC olfactory neurons, modifying the dynamics of their odor-evoked calcium responses. Demonstrates that circuit feedback can tune primary sensory representations, with implications for adaptation and gain control in chemosensory processing.",
+    "paths": [
+      "smell"
+    ],
+    "tags": [
+      "olfaction",
+      "neuromodulation",
+      "neuropeptides"
+    ]
+  },
+  "shtonda-2006-j-exp-biol": {
+    "label": "Shtonda & Avery, J Exp Biol 2006",
+    "doi": "10.1242/jeb.01955",
+    "url": "https://doi.org/10.1242/jeb.01955",
+    "synopsis": "Demonstrates that C. elegans exhibits active dietary choice: worms leave low-quality or hard-to-eat bacteria and hunt for nutritionally superior food sources, a preference enhanced by prior experience with good food. During food seeking, worms alternate between dwelling (frequent stops and reversals) and roaming (rapid straight movement); roaming is suppressed on good food and extended on bad food. AIY interneurons are required to extend roaming periods and are essential for efficient dietary search, linking interneuron activity to the explore/exploit balance during foraging.",
+    "paths": [
+      "locomotion",
+      "taste"
+    ],
+    "tags": [
+      "foraging",
+      "food-choice",
+      "locomotion",
+      "AIY",
+      "dwelling",
+      "roaming"
     ]
   }
 }
