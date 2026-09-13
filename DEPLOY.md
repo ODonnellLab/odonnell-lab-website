@@ -40,7 +40,7 @@ git log --oneline origin/deploy..origin/main    # commits waiting to be publishe
 | Host | Cloudflare Pages, project `odonnell-lab-website` |
 | Live | odonnellwormlab.com, also odonnell-lab-website.pages.dev |
 | Build | none; `publish = "."`, every file in the repo is served |
-| Headers | `_headers` (Cloudflare format). `netlify.toml` is a leftover from the site's first day on Netlify, 2026-06-04, and does nothing here |
+| Headers | `_headers` (Cloudflare Pages format). There is deliberately no `netlify.toml`; one was left over from the site's first day on Netlify, 2026-06-04, and removed 2026-09-13 because it implied the wrong host |
 | Pre-commit | `.githooks/pre-commit` blocks files over 50 MB, warns over 10 MB |
 
 `data/*.json` is served with CORS open so the worm-mind game can read it cross-origin.
